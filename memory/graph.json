@@ -1,0 +1,23 @@
+{
+  "nodes": [
+    { "id": "cycle", "rank": 5, "kind": "verb", "label": "cycle", "english": "repeat along an axis until a bound" },
+    { "id": "add", "rank": 5, "kind": "verb", "label": "add", "english": "accumulate, append, inject" },
+    { "id": "invert", "rank": 5, "kind": "verb", "label": "invert", "english": "undo a known transform" },
+    { "id": "compare", "rank": 5, "kind": "verb", "label": "compare", "english": "relate two values, then a path may follow" },
+    { "id": "cycle-add", "rank": 4, "kind": "form", "label": "cycle-add", "english": "loop n { var++ }" },
+    { "id": "add-cycle", "rank": 4, "kind": "form", "label": "add-cycle", "english": "add once, then a loop that is not that add" },
+    { "id": "+cycle -add", "rank": 4, "kind": "form", "label": "+cycle -add", "english": "loop that prunes on each pass" },
+    { "id": "loop", "rank": 3, "kind": "word", "label": "loop", "english": "English costume of cycle" },
+    { "id": "accumulate", "rank": 3, "kind": "word", "label": "accumulate", "english": "English costume of add" }
+  ],
+  "links": [
+    { "source": "cycle-add", "target": "cycle", "rel": "outer" },
+    { "source": "cycle-add", "target": "add", "rel": "inner" },
+    { "source": "add-cycle", "target": "add", "rel": "outer" },
+    { "source": "add-cycle", "target": "cycle", "rel": "inner" },
+    { "source": "+cycle -add", "target": "cycle", "rel": "outer" },
+    { "source": "+cycle -add", "target": "invert", "rel": "sign" },
+    { "source": "loop", "target": "cycle", "rel": "maps" },
+    { "source": "accumulate", "target": "add", "rel": "maps" }
+  ]
+}
